@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer | SmartPlace</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>SmartPlace</h2>
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="dashboard.html" class="menu">
+            <i class="fas fa-house"></i> Dashboard
+        </a>
+
+        <a href="profile.html" class="menu">
+            <i class="fas fa-user"></i> My Profile
+        </a>
+
+        <a href="resume.html" class="menu">
+            <i class="fas fa-file-lines"></i> Resume Upload
+        </a>
+
+        <a href="analyzer.html" class="menu active">
+            <i class="fas fa-robot"></i> AI Resume Analyzer
+        </a>
+
+        <a href="skills.html" class="menu">
+            <i class="fas fa-chart-line"></i> Skill Gap Analysis
+        </a>
+
+        <a href="jobs.html" class="menu">
+            <i class="fas fa-briefcase"></i> Job Opportunities
+        </a>
+
+        <a href="applications.html" class="menu">
+            <i class="fas fa-clipboard-check"></i> My Applications
+        </a>
+
+        <a href="preparation.html" class="menu">
+            <i class="fas fa-book-open"></i> Placement Preparation
+        </a>
+
+        <a href="login.html" class="menu logout">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="analyzer-header">
+            <h1>AI Resume Analyzer</h1>
+            <p>Analyze your resume and discover ways to improve your career opportunities.</p>
+        </div>
+
+        <!-- Analyzer Intro -->
+        <section class="analyzer-banner">
+            <div>
+                <h2><i class="fas fa-robot"></i> Smart AI Resume Analysis</h2>
+                <p>
+                    Upload your resume, select your target job role
+                    and get personalized resume feedback.
+                </p>
+            </div>
+            <i class="fas fa-file-circle-check banner-icon"></i>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="analyzer-card">
+
+            <h2>Analyze Your Resume</h2>
+            <p class="analyzer-subtitle">
+                Select your resume and the job role you are targeting.
+            </p>
+
+            <label class="analyzer-label">Choose Resume (PDF)</label>
+
+            <div class="analyzer-upload">
+                <i class="fas fa-cloud-arrow-up"></i>
+                <p>Select your resume file</p>
+
+                <input type="file" id="analyzerFile" accept=".pdf">
+
+                <span id="analyzerFileName">No file selected</span>
+            </div>
+
+            <label class="analyzer-label" for="targetRole">
+                Select Target Job Role
+            </label>
+
+            <select id="targetRole" class="role-select">
+                <option value="">Choose your job role</option>
+                <option value="Python Developer">Python Developer</option>
+                <option value="Web Developer">Web Developer</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Software Developer">Software Developer</option>
+            </select>
+
+            <button type="button" id="analyzeBtn" class="analyze-button">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                Analyze Resume
+            </button>
+
+            <p id="analyzerMessage"></p>
+
+        </section>
+
+        <!-- Analysis Result Area -->
+        <section class="analyzer-card result-card">
+
+            <h2><i class="fas fa-chart-column"></i> Analysis Results</h2>
+
+            <div id="resultPlaceholder">
+                <i class="fas fa-file-circle-question"></i>
+                <h3>Analysis not started</h3>
+                <p>
+                    Upload your resume and click Analyze Resume.
+                    Your analysis results will appear here.
+                </p>
+            </div>
+
+            <div id="demoResult" hidden>
+                <h3>Resume Selected Successfully!</h3>
+                <p id="selectedRoleResult"></p>
+                <p>
+                    Frontend test completed. Connect the Python
+                    Flask AI backend to generate actual resume scores,
+                    skill analysis and recommendations.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="analyzer-info">
+            <h3><i class="fas fa-lightbulb"></i> What will AI analyze?</h3>
+
+            <div class="analyzer-features">
+                <div>
+                    <i class="fas fa-star"></i>
+                    <h4>Resume Score</h4>
+                    <p>Overall resume quality and structure.</p>
+                </div>
+
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h4>Skills Detection</h4>
+                    <p>Technical and professional skills.</p>
+                </div>
+
+                <div>
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Job Match</h4>
+                    <p>How well your resume matches a job role.</p>
+                </div>
+
+                <div>
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Suggestions</h4>
+                    <p>Ways to improve your resume.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="analyzer.js"></script>
+
+</body>
+</html>

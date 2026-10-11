@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Smart Placement System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-left">
+            <div class="welcome-text">
+                <h1>Smart Placement System</h1>
+                <p>Build your future with the right opportunities.</p>
+            </div>
+        </div>
+
+        <div class="login-right">
+
+            <div class="login-box">
+
+                <h2>Create Account</h2>
+                <p>Register as a student to get started.</p>
+
+                <form id="registerForm">
+
+                    <label>Full Name</label>
+                    <input type="text" id="fullname"
+                           placeholder="Enter your full name" required>
+
+                    <label>Email Address</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone"
+                           placeholder="Enter phone number"
+                           pattern="[0-9]{10}"
+                           maxlength="10" required>
+
+                    <label>Register Number</label>
+                    <input type="text" id="regno"
+                           placeholder="Enter register number" required>
+
+                    <label>Department</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option value="CSE">Computer Science</option>
+                        <option value="IT">Information Technology</option>
+                        <option value="ECE">Electronics and Communication</option>
+                        <option value="EEE">Electrical and Electronics</option>
+                    </select>
+
+                    <label>Graduation Year</label>
+                    <select id="year" required>
+                        <option value="">Select Year</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                    </select>
+
+                    <label>CGPA</label>
+                    <input type="number" id="cgpa"
+                           placeholder="Enter your CGPA"
+                           min="0" max="10" step="0.01" required>
+
+                    <label>Password</label>
+                    <input type="password" id="password"
+                           placeholder="Create password"
+                           minlength="6" required>
+
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword"
+                           placeholder="Confirm password" required>
+
+                    <button type="submit">Create Account</button>
+
+                    <p id="message"></p>
+
+                </form>
+
+                <p class="register-link">
+                    Already have an account?
+                    <a href="login.html">Login here</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const form = document.getElementById("registerForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const password =
+                document.getElementById("password").value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            const message =
+                document.getElementById("message");
+
+            if (password !== confirmPassword) {
+                message.textContent = "Passwords do not match!";
+                message.style.color = "red";
+                return;
+            }
+
+            message.textContent =
+                "Registration successful! Backend connection is pending.";
+
+            message.style.color = "green";
+
+            form.reset();
+
+        });
+    </script>
+
+</body>
+</html>

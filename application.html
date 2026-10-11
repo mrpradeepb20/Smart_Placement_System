@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications | SmartPlace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">SmartPlace</h2>
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./profile.html">My Profile</a>
+        <a href="./resume.html">Resume Upload</a>
+        <a href="./analyzer.html">AI Resume Analyzer</a>
+        <a href="./skills.html">Skill Gap Analysis</a>
+        <a href="./jobs.html">Job Opportunities</a>
+        <a href="./application.html" class="active">My Applications</a>
+        <a href="./preparation.html">Placement Preparation</a>
+        <a href="./login.html">Logout</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div>
+                <h1>My Applications</h1>
+                <p>Track all your job applications in one place.</p>
+            </div>
+
+        </header>
+
+        <!-- WELCOME SECTION -->
+        <section class="application-welcome">
+            <h2>Your Career Journey Starts Here 🚀</h2>
+            <p>Monitor your application progress and stay updated.</p>
+        </section>
+
+        <!-- APPLICATION STATISTICS -->
+        <section class="application-stats">
+
+            <div class="application-stat-card">
+                <h2 id="totalCount">3</h2>
+                <p>Total Applications</p>
+            </div>
+
+            <div class="application-stat-card">
+                <h2 id="pendingCount">1</h2>
+                <p>Pending</p>
+            </div>
+
+            <div class="application-stat-card">
+                <h2 id="shortlistedCount">1</h2>
+                <p>Shortlisted</p>
+            </div>
+
+            <div class="application-stat-card">
+                <h2 id="rejectedCount">1</h2>
+                <p>Rejected</p>
+            </div>
+
+        </section>
+
+        <!-- APPLICATION TABLE -->
+        <section class="application-table-section">
+
+            <h3>Application History</h3>
+
+            <div class="application-filter">
+                <input
+                    type="text"
+                    id="searchApplication"
+                    placeholder="Search company or job role..."
+                >
+
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="shortlisted">Shortlisted</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+
+                <button onclick="filterApplications()">Filter</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="application-table">
+
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Job Role</th>
+                            <th>Applied Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="applicationData">
+
+                        <tr data-status="pending">
+                            <td>ABC Technologies</td>
+                            <td>Python Developer</td>
+                            <td>10 Oct 2026</td>
+                            <td>
+                                <span class="status pending">Pending</span>
+                            </td>
+                        </tr>
+
+                        <tr data-status="shortlisted">
+                            <td>Digital Solutions</td>
+                            <td>Web Developer</td>
+                            <td>08 Oct 2026</td>
+                            <td>
+                                <span class="status shortlisted">Shortlisted</span>
+                            </td>
+                        </tr>
+
+                        <tr data-status="rejected">
+                            <td>NextGen Software</td>
+                            <td>Full Stack Developer</td>
+                            <td>05 Oct 2026</td>
+                            <td>
+                                <span class="status rejected">Rejected</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <p id="noApplications" style="display:none;">
+                No matching applications found.
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="application.js"></script>
+
+</body>
+</html>

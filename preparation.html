@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Preparation | SmartPlace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h2 class="logo">SmartPlace</h2>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./profile.html">My Profile</a>
+        <a href="./resume.html">Resume Upload</a>
+        <a href="./analyzer.html">AI Resume Analyzer</a>
+        <a href="./skills.html">Skill Gap Analysis</a>
+        <a href="./jobs.html">Job Opportunities</a>
+        <a href="./application.html">My Applications</a>
+        <a href="./preparation.html" class="active">Placement Preparation</a>
+        <a href="./login.html">Logout</a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <h1>Placement Preparation</h1>
+                <p>Prepare yourself for your dream IT job.</p>
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME SECTION -->
+        <section class="prep-welcome">
+
+            <h2>Get Ready for Your Dream Job! 🚀</h2>
+
+            <p>
+                Improve your technical knowledge, aptitude,
+                coding skills and interview confidence.
+            </p>
+
+        </section>
+
+
+        <!-- PREPARATION CARDS -->
+        <section class="prep-grid">
+
+            <div class="prep-card">
+                <div class="prep-icon">🧠</div>
+                <h3>Aptitude Preparation</h3>
+                <p>Practice quantitative aptitude, reasoning and verbal ability.</p>
+
+                <button onclick="showTopics('aptitude')">
+                    Start Preparation
+                </button>
+            </div>
+
+
+            <div class="prep-card">
+                <div class="prep-icon">🐍</div>
+                <h3>Python Programming</h3>
+                <p>Learn Python basics, OOP concepts and coding questions.</p>
+
+                <button onclick="showTopics('python')">
+                    Start Learning
+                </button>
+            </div>
+
+
+            <div class="prep-card">
+                <div class="prep-icon">💻</div>
+                <h3>Technical Interview</h3>
+                <p>Prepare computer science and technical interview topics.</p>
+
+                <button onclick="showTopics('technical')">
+                    View Questions
+                </button>
+            </div>
+
+
+            <div class="prep-card">
+                <div class="prep-icon">⌨️</div>
+                <h3>Coding Practice</h3>
+                <p>Practice basic programming problems and logic building.</p>
+
+                <button onclick="showTopics('coding')">
+                    Practice Now
+                </button>
+            </div>
+
+
+            <div class="prep-card">
+                <div class="prep-icon">🤝</div>
+                <h3>HR Interview</h3>
+                <p>Learn how to answer common HR interview questions.</p>
+
+                <button onclick="showTopics('hr')">
+                    Prepare Now
+                </button>
+            </div>
+
+
+            <div class="prep-card">
+                <div class="prep-icon">📄</div>
+                <h3>Resume & Interview Tips</h3>
+                <p>Improve your resume and interview communication.</p>
+
+                <button onclick="showTopics('tips')">
+                    View Tips
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- TOPICS DISPLAY -->
+        <section class="prep-topics">
+
+            <h2 id="topicTitle">Your Preparation Topics</h2>
+
+            <div id="topicContent">
+                <p>Select any preparation category above to explore its topics.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="preparation.js"></script>
+
+</body>
+</html>

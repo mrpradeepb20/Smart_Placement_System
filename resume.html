@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Upload | SmartPlace</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>SmartPlace</h2>
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="dashboard.html" class="menu">
+            <i class="fas fa-house"></i> Dashboard
+        </a>
+
+        <a href="profile.html" class="menu">
+            <i class="fas fa-user"></i> My Profile
+        </a>
+
+        <a href="resume.html" class="menu active">
+            <i class="fas fa-file-lines"></i> Resume Upload
+        </a>
+
+        <a href="analyzer.html" class="menu">
+            <i class="fas fa-robot"></i> AI Resume Analyzer
+        </a>
+
+        <a href="skills.html" class="menu">
+            <i class="fas fa-chart-line"></i> Skill Gap Analysis
+        </a>
+
+        <a href="jobs.html" class="menu">
+            <i class="fas fa-briefcase"></i> Job Opportunities
+        </a>
+
+        <a href="applications.html" class="menu">
+            <i class="fas fa-clipboard-check"></i> My Applications
+        </a>
+
+        <a href="preparation.html" class="menu">
+            <i class="fas fa-book-open"></i> Placement Preparation
+        </a>
+
+        <a href="login.html" class="menu logout">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="resume-header">
+            <h1>Resume Upload</h1>
+            <p>Upload your latest resume to get started with AI analysis.</p>
+        </div>
+
+        <!-- Upload Card -->
+        <section class="resume-card">
+
+            <div class="upload-icon">
+                <i class="fas fa-file-pdf"></i>
+            </div>
+
+            <h2>Upload Your Resume</h2>
+
+            <p class="upload-description">
+                Upload your resume in PDF format.
+                Maximum file size: 5 MB.
+            </p>
+
+            <div class="upload-area" id="uploadArea">
+
+                <i class="fas fa-cloud-arrow-up"></i>
+
+                <h3>Drag and drop your resume here</h3>
+
+                <p>or click the button below to browse</p>
+
+                <input
+                    type="file"
+                    id="resumeFile"
+                    accept=".pdf"
+                    hidden
+                >
+
+                <button type="button" class="browse-btn"
+                    onclick="document.getElementById('resumeFile').click()">
+                    <i class="fas fa-folder-open"></i>
+                    Choose PDF File
+                </button>
+
+            </div>
+
+            <p id="fileName" class="file-name"></p>
+
+            <p id="uploadMessage" class="upload-message"></p>
+
+            <button type="button" class="upload-btn" id="uploadBtn">
+                <i class="fas fa-upload"></i>
+                Upload Resume
+            </button>
+
+        </section>
+
+        <!-- Resume Information -->
+        <section class="resume-info">
+
+            <h3><i class="fas fa-circle-info"></i> Upload Guidelines</h3>
+
+            <ul>
+                <li>Upload your latest updated resume.</li>
+                <li>Only PDF files are accepted.</li>
+                <li>Maximum file size is 5 MB.</li>
+                <li>Include your education, skills and projects.</li>
+                <li>Use a professional resume format.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="resume.js"></script>
+
+</body>
+</html>

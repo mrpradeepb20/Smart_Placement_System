@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Gap Analysis | Smart Placement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">SmartPlace</h2>
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./profile.html">My Profile</a>
+        <a href="./resume.html">Resume Upload</a>
+        <a href="./analyzer.html">AI Resume Analyzer</a>
+        <a href="./skills.html" class="active">Skill Gap Analysis</a>
+        <a href="./jobs.html">Job Opportunities</a>
+        <a href="./application.html">My Applications</a>
+        <a href="./preparation.html">Placement Preparation</a>
+
+        <a href="./login.html">Logout</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+    <div>
+        <h1>Skill Gap Analysis</h1>
+        <p>Identify your strengths and improve your skills.</p>
+    </div>
+
+    
+        </header>
+
+        <!-- INTRO -->
+        <section class="skill-welcome">
+            <h2>Build Your Career Skills 🚀</h2>
+            <p>
+                Compare your current skills with your target job requirements
+                and discover what you need to learn.
+            </p>
+        </section>
+
+        <!-- JOB SELECTION -->
+        <section class="skill-card">
+            <h3>Select Your Target Job Role</h3>
+
+            <select id="targetRole">
+                <option value="">Choose your career role</option>
+                <option value="python">Python Developer</option>
+                <option value="web">Web Developer</option>
+                <option value="data">Data Scientist</option>
+                <option value="fullstack">Full Stack Developer</option>
+            </select>
+
+            <button onclick="analyzeSkills()">Analyze My Skills</button>
+        </section>
+
+        <!-- SKILL RESULTS -->
+        <section class="skill-card">
+            <h3>Your Skill Analysis</h3>
+
+            <div id="skillResults">
+                <p>Select a job role and click Analyze My Skills to see your results.</p>
+            </div>
+        </section>
+
+        <!-- LEARNING ROADMAP -->
+        <section class="skill-card">
+            <h3>Recommended Learning Roadmap</h3>
+
+            <div id="learningRoadmap">
+                <p>Your personalized learning roadmap will appear here.</p>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+function analyzeSkills() {
+
+    const role = document.getElementById("targetRole").value;
+    const results = document.getElementById("skillResults");
+    const roadmap = document.getElementById("learningRoadmap");
+
+    if (role === "") {
+        alert("Please select your target job role!");
+        return;
+    }
+
+    const skillData = {
+
+        python: {
+            required: ["Python", "OOP", "SQL", "Flask", "Git"],
+            current: ["Python", "HTML", "CSS"],
+            learn: ["OOP Concepts", "SQL", "Flask", "Git"]
+        },
+
+        web: {
+            required: ["HTML", "CSS", "JavaScript", "React", "SQL"],
+            current: ["HTML", "CSS", "Python"],
+            learn: ["JavaScript", "React", "SQL"]
+        },
+
+        data: {
+            required: ["Python", "Statistics", "Pandas", "NumPy", "Machine Learning"],
+            current: ["Python", "HTML", "CSS"],
+            learn: ["Statistics", "Pandas", "NumPy", "Machine Learning"]
+        },
+
+        fullstack: {
+            required: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+            current: ["HTML", "CSS", "Python"],
+            learn: ["JavaScript", "React", "Node.js", "MongoDB"]
+        }
+    };
+
+    const selected = skillData[role];
+
+    const matched = selected.required.filter(
+        skill => selected.current.includes(skill)
+    );
+
+    const missing = selected.learn;
+
+    const percentage = Math.round(
+        (matched.length / selected.required.length) * 100
+    );
+
+    results.innerHTML = `
+        <h2>${percentage}%</h2>
+        <p>Skill Match Score (Demo)</p>
+
+        <h4>Available Skills</h4>
+        <div class="skill-tags">
+            ${matched.map(skill => `<span>${skill} ✓</span>`).join("")}
+        </div>
+
+        <h4>Skills to Improve</h4>
+        <div class="skill-tags missing">
+            ${missing.map(skill => `<span>${skill} +</span>`).join("")}
+        </div>
+    `;
+
+    roadmap.innerHTML = `
+        <h4>Your Recommended Learning Topics</h4>
+        <ol>
+            ${missing.map(skill => `<li>Learn ${skill} basics and practice with small projects.</li>`).join("")}
+        </ol>
+    `;
+}
+</script>
+
+</body>
+</html>

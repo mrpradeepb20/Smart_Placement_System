@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Opportunities | SmartPlace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">SmartPlace</h2>
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./profile.html">My Profile</a>
+        <a href="./resume.html">Resume Upload</a>
+        <a href="./analyzer.html">AI Resume Analyzer</a>
+        <a href="./skills.html">Skill Gap Analysis</a>
+        <a href="./jobs.html" class="active">Job Opportunities</a>
+        <a href="./application.html">My Applications</a>
+        <a href="./preparation.html">Placement Preparation</a>
+        <a href="./login.html">Logout</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+    <div>
+        <h1>Skill Gap Analysis</h1>
+        <p>Identify your strengths and improve your skills.</p>
+    </div>
+
+    
+        </header>
+
+        <!-- WELCOME SECTION -->
+        <section class="jobs-welcome">
+            <h2>Find Your Dream IT Job 🚀</h2>
+            <p>Explore opportunities and take the next step in your career.</p>
+        </section>
+
+        <!-- SEARCH SECTION -->
+        <section class="jobs-search">
+            <input
+                type="text"
+                id="jobSearch"
+                placeholder="Search job title or company..."
+            >
+
+            <select id="jobFilter">
+                <option value="all">All Job Roles</option>
+                <option value="python">Python Developer</option>
+                <option value="web">Web Developer</option>
+                <option value="data">Data Scientist</option>
+                <option value="fullstack">Full Stack Developer</option>
+            </select>
+
+            <button onclick="filterJobs()">Search Jobs</button>
+        </section>
+
+        <!-- JOB LIST -->
+        <section class="jobs-list" id="jobsList">
+
+            <div class="job-card" data-role="python">
+                <h3>Python Developer</h3>
+                <h4>ABC Technologies</h4>
+
+                <p>📍 Coimbatore</p>
+                <p>💰 ₹3 - 4 LPA</p>
+                <p>🎓 Fresher</p>
+
+                <div class="job-skills">
+                    Python | Flask | MySQL
+                </div>
+
+                <button onclick="applyJob('Python Developer - ABC Technologies')">
+                    Apply Now
+                </button>
+            </div>
+
+            <div class="job-card" data-role="web">
+                <h3>Web Developer</h3>
+                <h4>Digital Solutions</h4>
+
+                <p>📍 Chennai</p>
+                <p>💰 ₹3 - 4.5 LPA</p>
+                <p>🎓 Fresher</p>
+
+                <div class="job-skills">
+                    HTML | CSS | JavaScript
+                </div>
+
+                <button onclick="applyJob('Web Developer - Digital Solutions')">
+                    Apply Now
+                </button>
+            </div>
+
+            <div class="job-card" data-role="data">
+                <h3>Data Science Intern</h3>
+                <h4>Tech Analytics</h4>
+
+                <p>📍 Bangalore</p>
+                <p>💰 ₹15,000 / Month</p>
+                <p>🎓 Internship</p>
+
+                <div class="job-skills">
+                    Python | Pandas | Machine Learning
+                </div>
+
+                <button onclick="applyJob('Data Science Intern - Tech Analytics')">
+                    Apply Now
+                </button>
+            </div>
+
+            <div class="job-card" data-role="fullstack">
+                <h3>Full Stack Developer</h3>
+                <h4>NextGen Software</h4>
+
+                <p>📍 Coimbatore</p>
+                <p>💰 ₹4 - 5 LPA</p>
+                <p>🎓 Fresher</p>
+
+                <div class="job-skills">
+                    React | Node.js | MongoDB
+                </div>
+
+                <button onclick="applyJob('Full Stack Developer - NextGen Software')">
+                    Apply Now
+                </button>
+            </div>
+
+        </section>
+
+        <p id="noJobs" style="display:none;">
+            No matching jobs found.
+        </p>
+
+    </main>
+</div>
+
+<script src="jobs.js"></script>
+
+</body>
+</html>
